@@ -15,8 +15,9 @@ class Pilebornee:
         if not self.est_pleine():
             self.nb_elm+=1
             for i in range(self.nb_elm):
-                stocker = self.tab[i]
-                self.tab[i+1] = stocker
+                if not i == self.nb_elm:
+                    stocker = self.tab[i]
+                    self.tab[i+1] = stocker
             self.tab[0]=e
         else:
             raise IndexError
@@ -24,8 +25,9 @@ class Pilebornee:
     def depiler(self):
         elm = self.tab[0]
         for i in range(self.nb_elm):
-            stocker = self.tab[i+1]
-            self.tab[i] =self.tab[i+1]
+            if not i == self.nb_elm-1:
+                stocker = self.tab[i+1]
+                self.tab[i] =stocker
         return elm 
     
 # Jeu de test
@@ -33,7 +35,7 @@ class Pilebornee:
 pb = Pilebornee(5)
 
 assert pb.est_vide() == True
-for i in range(4):
+for i in range(5):
     pb.empiler(i)
 assert pb.est_pleine() == False
 
