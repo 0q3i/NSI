@@ -27,4 +27,5 @@ def f(x):
     return x**2
 assert applique1(f,tab) == [1,4,9,16,25]
 assert applique2(f,tab) == applique1(f,tab)
-#test exo3
+
+
