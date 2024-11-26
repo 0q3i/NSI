@@ -18,13 +18,13 @@ class Noeud:
     def __eq__(self, a2):
         if self is None and a2 is None:
             return True
-        else:
-            return (
-            (self.valeur == a2.valeur) and
-            (self.gauche == a2.gauche if self.gauche or a2.gauche else self.gauche == a2.gauche) and
-            (self.droit == a2.droit if self.droit or a2.droit else self.droit == a2.droit)
-        )
-        
+        elif self is None or a2 is None:
+            return False
+        elif self.valeur != a2.valeur:
+            return False
+        return (self.gauche == a2.gauche) and (self.droit == a2.droit)
+
+
 #jeu de test 
 
 a1 = Noeud(None,"rien tkt",Noeud(None,"rien tkt",None))
@@ -35,4 +35,4 @@ assert a1 == a2
 
 a2 = Noeud(Noeud(None,"rien tkt",None),"rien tkt",Noeud(None,"rien tkt",None))
 
-assert a1 == a2 
+assert a1 != a2 
