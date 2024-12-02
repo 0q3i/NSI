@@ -12,12 +12,14 @@ def appartient(x, a):
         return True
     
 def ajoute(x, a):
-    if a is None:
-        return Noeud(None,x,None)
-    elif x < a.valeur:
-        return Noeud(ajoute(x, a.gauche),a.valeur, a.droit)
-    else:
-        return Noeud(a.gauche,a.valeur,ajoute(x, a.droit)) 
+    #exo4
+    if a.valeur != x:
+        if a is None:
+            return Noeud(None,x,None)
+        elif x < a.valeur:
+            return Noeud(ajoute(x, a.gauche),a.valeur, a.droit)
+        else:
+            return Noeud(a.gauche,a.valeur,ajoute(x, a.droit)) 
 
 def suprime_minimum(a):
     assert a is not None
