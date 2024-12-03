@@ -1,0 +1,5 @@
+arbre1 ((b),a,(c))
+arbre2 ((c),b,(a))
+arbre3 ((c),a,(b))
+arbre4 ((a),b,(c))
+arbre5 ((b),c,(a))
