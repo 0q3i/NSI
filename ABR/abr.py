@@ -1,5 +1,6 @@
 from noeud import *
 from exo3 import *
+from random import *
 
 def appartient(x, a):
     if a is None:
@@ -54,7 +55,24 @@ def supp(a, x):
 
 
 
-#exo
+#exo6
+
+#1
+def trier(t):
+    abr = ABR()
+    melange(t)#modification pour le 3
+    for elm in t:
+        abr.ajoute(elm)
+    return abr.lister()
+#complexite lineaire
+
+#2
+def melange(t):
+    for i in range(len(t)):
+        i_random = randint(0,i)
+        t[i],t[i_random] = t[i_random], t[i]
+#compexite linaire    
+
 
 
 class ABR:
@@ -75,4 +93,3 @@ class ABR:
         remplir(self.racine, t)
         return t 
     
-    def 
