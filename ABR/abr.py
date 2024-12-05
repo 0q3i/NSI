@@ -71,7 +71,7 @@ def melange(t):
     for i in range(len(t)):
         i_random = randint(0,i)
         t[i],t[i_random] = t[i_random], t[i]
-#compexite linaire    
+#compexite linaire   
 
 
 
